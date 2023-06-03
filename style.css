@@ -65,7 +65,7 @@ body {
   transform: translate(-50%, -50%);
   width: 150px;
   height: 150px;
-  background: url("../img/picture.jpg");
+  background: url("img/screencaps.jpeg");
   background-size: cover;
   border-radius: var(--circle-radius);
 }
