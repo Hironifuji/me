@@ -1,0 +1,639 @@
+/* import poppins font to css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* selector CSS3 */
+:root {
+  --default-color: #f5f5f5; /* default color */
+
+  --circle-radius: 50%; /* radius border to form a circle */
+  --default-radius: 6px; /* default radius border on content wrapper */
+
+  --max-width-container: 97%; /* maximum width on content wrapper with body html */
+
+  --set-boxshadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; /* boxshadow contents */
+}
+
+/* CSS reset pick all tags */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  user-select: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 55%;
+  height: auto;
+  margin: 10% auto;
+  padding-bottom: 5%;
+  background: rgba(245, 245, 245, 0.88);
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+  box-shadow: var(--set-boxshadow);
+}
+.wrapper .profile-picture {
+  display: block;
+  margin: auto;
+}
+.profile-picture::before {
+  content: "";
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 120px;
+}
+.profile-picture::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: url("../img/picture.jpg");
+  background-size: cover;
+  border-radius: var(--circle-radius);
+}
+
+#nick-name {
+  display: block;
+  text-align: center;
+  margin: 2vh auto;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: black;
+}
+
+.wrapper .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--max-width-container);
+  margin: 10% auto;
+}
+.container .box-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+  margin: auto 1%;
+  padding: 20px;
+  width: 250px;
+  height: auto;
+  background: rgba(245, 245, 245, 0.95);
+  border-radius: var(--default-radius);
+  box-shadow: var(--set-boxshadow);
+}
+.box-container .fa-envelope,
+.box-container .fa-store {
+  font-size: 20px;
+}
+.box-container a {
+  color: black;
+}
+.box-container a:hover {
+  width: 100%;
+  max-width: 70%;
+  height: auto;
+  text-align: center;
+  margin: auto;
+  color: var(--default-color);
+  background: blue;
+  border-radius: 16px;
+}
+
+.wrapper .social-media-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+  max-width: var(--max-width-container);
+  margin: auto;
+}
+.social-media-box a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  margin: 15px auto;
+  color: black;
+  background: rgba(245, 245, 245, 0.95);
+  border-radius: var(--default-radius);
+  box-shadow: var(--set-boxshadow);
+  transition: all 0.5s ease;
+}
+.social-media-box a:hover {
+  transform: translateY(-5px);
+  border-radius: 18px;
+}
+
+.social-media-box a img {
+  margin-top: -15px;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--circle-radius);
+}
+.social-media-box a p {
+  padding: 25px;
+  text-transform: capitalize;
+}
+
+.wrapper .footer-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh auto 0 auto;
+  max-width: var(--max-width-container);
+}
+.footer-social h1 {
+  font-size: 25px;
+  margin: 5vh 0;
+  text-transform: capitalize;
+}
+.footer-social .social-box {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+.social-box a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  width: 55px;
+  height: 55px;
+  margin: 0 2%;
+  color: black;
+  border: 2px solid;
+  background: rgba(245, 245, 245, 0.95);
+  border-radius: var(--default-radius);
+  transition: all 0.5s ease;
+}
+.social-box a:hover {
+  transform: translateY(-5px);
+  border-radius: var(--circle-radius);
+}
+
+#copyright {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 220%;
+  transform: translate(-50%, -50%);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/*===== Extra small devices (phones, 600px and down) =====*/
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 90%;
+    margin: 15% auto 20% auto;
+  }
+  .profile-picture::before {
+    width: 95px;
+    height: 65px;
+  }
+  .profile-picture::after {
+    width: 100px;
+    height: 100px;
+  }
+
+  #nick-name {
+    font-size: 15px;
+  }
+  .wrapper .container {
+    flex-direction: column;
+    gap: 4vh;
+  }
+
+  .container .box-container {
+    width: 100%;
+    max-width: 70%;
+    font-size: 9px;
+    gap: 1vh;
+    padding: 10px;
+  }
+  .box-container .fa-envelope,
+  .box-container .fa-store {
+    font-size: 12px;
+  }
+
+  .wrapper .social-media-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .social-media-box a {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 70%;
+    height: 7vh;
+    margin: 10px auto;
+    font-size: 12px;
+  }
+  .social-media-box a img {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+  }
+
+  .wrapper .footer-social {
+    margin: 3vh auto 0 auto;
+  }
+  .footer-social h1 {
+    font-size: 18px;
+    margin: 3vh 0;
+  }
+  .social-box a {
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+  }
+
+  #copyright {
+    top: 190%;
+    font-size: 14px;
+  }
+}
+
+/*===== Small devices (portrait tablets and large phones, 600px to 768px) =====*/
+@media (min-width: 600px) and (max-width: 768px) {
+  .wrapper {
+    max-width: 80%;
+    margin: 15% auto 20% auto;
+  }
+  .profile-picture::before {
+    width: 98px;
+    height: 68px;
+  }
+  .profile-picture::after {
+    width: 110px;
+    height: 110px;
+  }
+
+  #nick-name {
+    font-size: 18px;
+  }
+  .wrapper .container {
+    max-width: 80%;
+  }
+  .container .box-container {
+    width: 80%;
+    font-size: 11px;
+    gap: 1.5vh;
+    padding: 11px;
+  }
+  .box-container .fa-envelope,
+  .box-container .fa-store {
+    font-size: 14px;
+  }
+
+  .wrapper .social-media-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .social-media-box a {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 70%;
+    height: 7vh;
+    margin: 10px auto;
+    font-size: 12px;
+  }
+  .social-media-box a img {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+  }
+
+  .wrapper .footer-social {
+    margin: 3vh auto 0 auto;
+  }
+  .footer-social h1 {
+    font-size: 19px;
+    margin: 3.5vh 0;
+  }
+  .social-box a {
+    font-size: 19px;
+    width: 41px;
+    height: 41px;
+  }
+
+  #copyright {
+    top: 190%;
+    font-size: 14px;
+  }
+}
+
+/*===== Medium device (landscape tablet, 768px to 992px) =====*/
+@media (min-width: 768px) and (max-width: 992px) {
+  .wrapper {
+    max-width: 70%;
+    margin: 15% auto 20% auto;
+  }
+  .profile-picture::before {
+    width: 100px;
+    height: 70px;
+  }
+  .profile-picture::after {
+    width: 120px;
+    height: 120px;
+  }
+
+  #nick-name {
+    font-size: 20px;
+  }
+  .wrapper .container {
+    max-width: 78%;
+  }
+  .container .box-container {
+    width: 100%;
+    font-size: 13px;
+    gap: 1.8vh;
+    margin: auto 3%;
+    padding: 13px;
+  }
+  .box-container .fa-envelope,
+  .box-container .fa-store {
+    font-size: 15.5px;
+  }
+
+  .wrapper .social-media-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 78%;
+  }
+  .social-media-box a {
+    width: 120px;
+    height: 120px;
+    margin: 15px auto;
+    font-size: 12px;
+  }
+  .social-media-box a img {
+    width: 32px;
+    height: 32px;
+    margin-top: -15px;
+  }
+
+  .wrapper .footer-social {
+    margin: 4vh auto 0 auto;
+  }
+  .footer-social h1 {
+    font-size: 20px;
+    margin: 4vh 0;
+  }
+  .social-box a {
+    font-size: 20px;
+    width: 42px;
+    height: 42px;
+  }
+
+  #copyright {
+    top: 168%;
+    font-size: 14px;
+  }
+}
+
+/*===== Large devices (laptop/desktop, 992px to 1024px) =====*/
+@media (min-width: 992px) and (max-width: 1024px) {
+  .wrapper {
+    max-width: 60%;
+    margin: 15% auto 20% auto;
+  }
+  .profile-picture::before {
+    width: 110px;
+    height: 80px;
+  }
+  .profile-picture::after {
+    width: 130px;
+    height: 130px;
+  }
+
+  #nick-name {
+    font-size: 23px;
+  }
+  .wrapper .container {
+    max-width: 85%;
+  }
+  .container .box-container {
+    width: 100%;
+    font-size: 15px;
+    gap: 1.95vh;
+    margin: auto 2%;
+    padding: 15px;
+  }
+  .box-container .fa-envelope,
+  .box-container .fa-store {
+    font-size: 17px;
+  }
+
+  .wrapper .social-media-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 85%;
+  }
+  .social-media-box a {
+    width: 120px;
+    height: 120px;
+    margin: 16px auto;
+    font-size: 13px;
+  }
+  .social-media-box a img {
+    width: 33px;
+    height: 33px;
+    margin-top: -16px;
+  }
+
+  .wrapper .footer-social {
+    margin: 4vh auto 0 auto;
+  }
+  .footer-social h1 {
+    font-size: 20px;
+    margin: 4vh 0;
+  }
+  .social-box a {
+    font-size: 20px;
+    width: 42px;
+    height: 42px;
+  }
+
+  #copyright {
+    top: 160%;
+    font-size: 14px;
+  }
+}
+
+/*===== Extra large devices (large laptops and desktops, 1024px to 1366px) =====*/
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .wrapper {
+    max-width: 70%;
+    margin: 15% auto 20% auto;
+  }
+  .profile-picture::before {
+    width: 120px;
+    height: 95px;
+  }
+  .profile-picture::after {
+    width: 140px;
+    height: 140px;
+  }
+
+  #nick-name {
+    font-size: 24px;
+  }
+  .wrapper .container {
+    max-width: 85%;
+  }
+  .container .box-container {
+    width: 100%;
+    font-size: 16px;
+    gap: 2vh;
+    margin: auto 2%;
+    padding: 16px;
+  }
+  .box-container .fa-envelope,
+  .box-container .fa-store {
+    font-size: 18px;
+  }
+
+  .wrapper .social-media-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 85%;
+  }
+  .social-media-box a {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    font-size: 15px;
+  }
+  .social-media-box a img {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+  }
+
+  .wrapper .footer-social {
+    margin: 4vh auto 0 auto;
+  }
+  .footer-social h1 {
+    font-size: 24px;
+    margin: 5vh 0;
+  }
+  .social-box a {
+    font-size: 23px;
+    width: 45px;
+    height: 45px;
+  }
+
+  #copyright {
+    top: 195%;
+    font-size: 15px;
+  }
+}
+
+/*===== Extra large devices (desktops and pc, 1366px and up) =====*/
+@media (min-width: 1366px) {
+  .wrapper {
+    max-width: 70%;
+    margin: 15% auto 20% auto;
+  }
+  .profile-picture::before {
+    width: 125px;
+    height: 100px;
+  }
+  .profile-picture::after {
+    width: 145px;
+    height: 145px;
+  }
+
+  #nick-name {
+    font-size: 25px;
+  }
+  .wrapper .container {
+    max-width: 95%;
+  }
+  .container .box-container {
+    width: 100%;
+    font-size: 17px;
+    gap: 2vh;
+    margin: auto 2%;
+    padding: 20px;
+  }
+  .box-container .fa-envelope,
+  .box-container .fa-store {
+    font-size: 20px;
+  }
+
+  .wrapper .social-media-box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    max-width: 95%;
+  }
+  .social-media-box a {
+    width: 165px;
+    height: 165px;
+    margin: 30px auto;
+    font-size: 15px;
+  }
+  .social-media-box a img {
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+  }
+
+  .wrapper .footer-social {
+    margin: 5vh auto 0 auto;
+  }
+  .footer-social h1 {
+    font-size: 25px;
+    margin: 6vh 0;
+  }
+  .social-box a {
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+  }
+
+  #copyright {
+    top: 245%;
+    font-size: 16px;
+  }
+}
+
+/*
+  <!> Reminder <!>
+
+  if you want to use the entire code here, please don't copy and paste! You may copy and paste anything here, 
+  but may not reproduce the template and appearance of this website. appreciate the maker. Thank You.
+  
+*/
